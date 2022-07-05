@@ -73,7 +73,7 @@ Os inputs: Nome, Data, CPF, Nome da Mãe, Email, Usuário e Senha estão sendo a
 <Dark Mode>
 ```
 
-<img src=".\Tela-de-Autenticacao./Imagens/Darkmode.png" alt="exemplo imagem">
+<img src="./Imagens/Darkmode.png" alt="exemplo imagem">
 
 
 [⬆ Voltar ao topo](#Tela-de-Autenticacao)<br>
