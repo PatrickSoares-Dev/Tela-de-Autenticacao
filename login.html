@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <title>Página de Autenticação</title>
+
+     <!-- Outros -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" /></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.8/jquery.mask.min.js" integrity="sha512-hAJgR+pK6+s492clbGlnrRnt2J1CJK6kZ82FZy08tm6XG2Xl/ex9oVZLE6Krz+W+Iv4Gsr8U2mGMdh0ckRH61Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="../bootstrap-5.2.0-beta1-dist/css/bootstrap.rtl.min.css">
+
+    <link rel="stylesheet" href="../bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js">
+
+    <!-- CSS PRINCIPAL -->
+    <link rel="stylesheet" href="../Style/style.css"> 
+
+    <!-- Jquery Validate -->
+    <script type="text/javascript" src="../JavaScript/jquery.js"></script>
+    <script type="text/javascript" src="../JavaScript/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../JavaScript/jquery.validate.js"></script>
+
+
+</head>
+
+<body> 
+    <div class="container">
+        <div class="signin-signup">
+            <!--Form de Login-->
+            <form action="" name="form" id="form" href="#login" class="sign-in-form">
+                <div class="darkcheck"> 
+                    <input type="checkbox" class="checkbox" id="chk" />
+                    <label class="label2" for="chk">
+                      <i class="fas fa-sun"></i>
+                      <i class="fas fa-moon"></i>
+                      <div class="ball"></div>
+                    </label>
+                </div>    
+                <h2 id="ti-login" class="title">Faça login</h2>
+                    <div id="msgerror1" class="msgerror1"></div>
+                    <div id="msgsucess1" class="msgsucess1"></div>
+                <div class="inputField ">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="usuario" maxlength="12" name="usuario" autocomplete="off" placeholder="Login" aut>
+                    <label for="usuario" class="label-error" id="userLabel"></label>
+                    <br>
+                    <br>
+                </div>
+                <div class="inputField ">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="senha" maxlength="10" autocomplete="off" name="senha" placeholder="Senha">       
+                    <span class="eye" onclick="eye()" >
+                        <i class="fa fa-eye" id="hide1"></i>
+                        <i class="fa fa-eye-slash" id="hide2"></i>
+                        <label for="senha" class="label-error" id="senhaLabel"></label>
+                    </span>     
+                </div>
+                <br>
+                <!--Button Login -->
+                <a href="./mudar.html" id="forgot">Esqueceu sua senha?</a>	
+                <input type="button" value="Login" onclick="entrar()" id="btnlogin" class="btn">
+                
+                 <!-- Midias Sociais -->
+                <p class="social-text">Ou entre pelas redes sociais.</p>
+                
+                <div class="social-media">
+                    <a href="#" id="fb" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" id="google" class="social-icon">
+                        <i class="fab fa-google-plus-g"></i>
+                    </a>
+                    <a href="#" id="linkedin" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    
+                </div>
+                <br>
+                <!-- Cadastro Mobile -->
+                <p class="account-text">Ainda não tem uma conta? <a href="#" id="sign-up-btn2">Criar conta</a> </p>                
+            </form>
+
+                <!--Form de Registro-->
+
+            <form action="" name="formRE" id="formRE" class="sign-up-form">
+                <h2 class="title" id="ti-register">Registre-se</h2> 
+                <div id="msgerror" class="msgerror"></div>
+                <div id="msgsucess" class="msgsucess"></div>
+
+                <!--Input Nome -->
+
+                <div class="inputField">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="nome" placeholder="Nome Completo" id="nome"
+                    minlength="15" maxlength="60">
+                    <label for="nome" class="label-error" id="labelnome"></label>
+
+                <!--Input Genero -->
+
+                </div>
+                <div class="inputField">
+                    <i id="gender" class="fas fa-mars-and-venus"></i>
+                    
+                    <select name="gender" name="gender" id="gender" form="gender" required>
+                        <option	option selected disabled value="">Selecione um gênero</option>
+					    <option value="Masculino">Masculino</option>
+					    <option value="Feminino">Feminino</option>
+					    <option value="Outro">Outro</option>
+                        <option value="Nao">Não quero informar</option>
+			 	     </select>
+                </div>   
+                
+                <!--Input Data -->
+            
+                <div class="inputField">
+                    <i class="fas fa-calendar-days"></i>
+                    <input type="text" id="data" name="data" maxlength="10" data-js="date" placeholder="Data de nascimento">
+                    <label for="data" class="label-error" id="labeldata"></label>
+                </div>   
+
+                <!--Input CPF -->
+
+                <div class="inputField">
+                    <i class="fas fa-id-badge cpf"></i>
+                    <input oninput="validaCpf(TestaCPF(this.value));" autocomplete="off" type="text" 
+                    id="cpf" autocomplete="off" maxlength="14" name="cpf" class="error" placeholder="CPF">  
+                    <span id="cpfinvalid" class="cpfinvalid">CPF Inválido</span>
+                    <span id="cpfvalid" class="cpfvalid">CPF Válido</span>
+                    <label for="cpf" class="label-error" id="labelcpf"></label>
+                </div>
+
+                <!--Input Mae -->
+
+                <div class="inputField">
+                    <i class="fas fa-child-dress"></i>
+                    <input type="text" id="mae" name="mae" maxlength="60" minlength="15" placeholder="Nome da Mãe">
+                    <label for="mae" class="label-error" id="labelmae"></label>
+
+                <!--Input Pai -->
+                
+                </div>
+                <div class="inputField">
+                    <i class="fas fa-child"></i>
+                    <input type="text" id="pai" maxlength="60" minlength="15"  name="pai" placeholder="Nome do Pai">
+                    
+                <!--Input Email -->
+
+
+                </div>
+                <div class="inputField">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" maxlength="40" name="email" autocomplete="off" placeholder="Email">
+                    <label for="email" class="label-error" id="labelemail"></label>
+
+                <!--Input Telefone Fixo -->
+                
+                </div>
+                <div class="inputField">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" id="telefone" name="telefone" data-js="phone" placeholder="Telefone fixo">
+                    
+                    <!--Input Celular -->
+
+                </div>
+                <div class="inputField">
+                    <i class="fas fa-mobile"></i>
+                    <input type="text" id="celular" data-js="phone1" name="celular" placeholder="Celular">
+                    <label for="celular" class="label-error" id="labelcelular"></label>
+
+                </div>
+
+                 <!--Input CEP -->
+
+                <div class="inputField">        
+                    <i class="fas fa-location-dot" id="cepi"></i>
+                    <input id="cep" type="text"  name="cep" maxlength="8" placeholder="CEP">
+                    <input type="button" class="btncep" value="Consultar" id="btncep">
+                    <label for="cep" class="label-error" id="labelcep"></label>
+                </div>
+
+                 <!--Input CIDADE -->
+
+                <div class="inputField">  
+                    <i class="fas fa-location-dot"></i>      
+                    <input id="cidade" type="text"  name="cidade" placeholder="Cidade">
+                    <label for="cidade" class="label-error" id="labelcidade"></label>
+                </div>
+
+                 <!--Input Logradouro -->
+
+                <div class="inputField">        
+                    <i class="fas fa-location-dot"></i>
+                    <input id="logradouro" type="text"  name="logradouro" placeholder="Logradouro">
+                    <label for="logradouro" class="label-error" id="labellogradouro"></label>
+                </div>
+
+                <!--Input Bairro -->
+                
+                <div class="inputField">        
+                    <i class="fas fa-location-dot"></i>
+                    <input id="bairro" type="text"  name="bairro" placeholder="Bairro">
+                    <label for="bairro" class="label-error" id="labelbairro"></label>
+                </div>
+
+                <!--Input UF -->
+
+                <div class="inputField">        
+                    <i class="fas fa-location-dot"></i>
+                    <input id="uf" type="text"  name="uf" maxlength="2" placeholder="UF">
+                    <label for="uf" class="label-error" id="labeluf"></label>
+                </div>
+
+                <!--Input Numero -->
+
+                <div class="inputField">        
+                    <i class="fas fa-location-dot"></i>
+                    <input id="numero" type="text"  name="numero" maxlength="6" placeholder="Nº">
+                    <label for="numero" class="label-error" id="labelnumero"></label>
+                </div>
+
+                <!--Input LoginRE -->
+
+                <div class="inputField">        
+                    <i class="fas fa-user"></i>
+                    <input id="loginre" type="text"  name="loginre" placeholder="Login">
+                    <label for="loginre" class="label-error" id="labelloginre"></label>
+                </div>
+
+                <!--Input Password -->
+
+                <div class="inputField">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" minlength="5" maxlength="10" id="password2"  name="password2" id="password2" autocomplete="off" placeholder="Senha">
+                    <label for="password2" class="label-error" id="labelpassword2"></label>
+
+                 <!--Input Password Confirm -->
+
+                </div>
+                <div class="inputField">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="csenha" maxlength="10" name="csenha" autocomplete="off" placeholder="Confirmar senha">
+                    <label for="csenha" class="label-error" id="labelcsenha"></label>
+
+                <!--Inputs -->
+                <!--Button register -->
+
+                </div>          
+                <input type="button" value="Registrar" onclick="validate()" class="btn" id="btnregister">
+            
+                <p class="account-text">Ja tem uma conta? <a href="#" id="sign-in-btn2" onclick="topFunction()">Fazer login</a> </p>                
+            </form>
+        </div>
+
+            <!-- Painel lateral login -->
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Ja tem cadastro?</h3>
+                    <p> Então faça login e entre com suas informações para acessar nossos serviços</p>
+                    <button class="btn" id="sign-in-btn">Logar</button>
+                </div>
+                <img src="./IMG/" alt="" class="image">
+            </div>
+
+            <!-- Painel lateral Registro -->
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Novo por aqui?</h3>
+                    <p> Então registre-se para conhecer os serviços disponíveis da Telecall para a sua empresa.</p>
+                    <button class="btn" id="sign-up-btn" >Registrar</button>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript Principal -->
+    <script type="text/javascript" src="../JavaScript/login.js"></script>
+</body>
+</html>

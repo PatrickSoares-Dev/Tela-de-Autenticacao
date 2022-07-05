@@ -1,0 +1,61 @@
+/* CSS DE RECUPERAR SENHA */
+
+.form-gap {
+    padding-top: 5%;
+    
+}
+
+.text-center h2{
+    color: #cd2233;
+}
+
+.text-center p{
+    color: #444;
+}
+
+.img-fluid{
+    position: relative;
+    height: 5rem;
+    margin-bottom: 4rem;
+    margin-left: 7rem;
+    
+
+}
+
+body{
+    background-image: url(../Page/assets/img/hero-bg.png);
+    background-repeat: no-repeat ;
+	background-size: cover;
+	background-position: center;
+}
+
+.panel{
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+input{
+    border: 1px solid #444 !important; 
+    border-radius: 5px !important;
+    text-align: center !important;
+    color: #fff !;
+}
+
+.input-group span{
+    border: 1px solid #fff !important;
+    border: none !important;
+}
+
+.btn{
+    background-color: #004a7b ;
+    border: 1px solid #004a7b;
+    width: 30rem;
+    color: #fff;
+}
+
+.btn:hover{
+    background-color: #073350 ;
+    color: #fff;
+    text-decoration: none
+}
