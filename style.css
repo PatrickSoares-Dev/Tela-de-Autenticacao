@@ -412,6 +412,7 @@ button{
 
 #btncep{
     font-size: 15px;
+    cursor: pointer;
 }
 
 .btn#btnregister{
@@ -566,6 +567,7 @@ a{
 .eye{
     position: relative;
     margin-right: 1rem;
+    cursor: pointer;
 }
 
 #password{

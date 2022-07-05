@@ -342,7 +342,7 @@ input.addEventListener('keypress', () => {
 /* Eye para ver senha*/
 
 function eye() {
-  var x = document.getElementById("password");
+  var x = document.getElementById("senha");
   var y = document.getElementById("hide1");
   var z = document.getElementById("hide2");
 
