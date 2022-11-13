@@ -51,54 +51,6 @@ form input:focus ~ .label1{
     padding: 0 5px;
 }
 
-.checkbox {
-    opacity: 0;
-    position: absolute;
-  }
-  
-  .label2 {
-
-    margin-top: 1em;
-    background-color: var(--colorblack);
-    border-radius: 50px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 18rem;
-    padding: 5px;
-    position: relative;
-    height: 25px;
-    width: 45px;
-    transform: scale(1.2);
-  
-  }
-  
-  
-  .label2 .ball {
-    background-color:  var(--colorwhite);
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 1.5px;
-    height: 20px;
-    width: 19.5px;
-    transform: translateX(0px);
-    transition: transform 0.2s linear;
-  }
-  
-  .checkbox:checked + .label .ball {
-    transform: translateX(24px);
-  }
-  
-  .fa-moon {
-    color: #f1c40f;
-  }
-  
-  .fa-sun {
-    color: #FFBF00;
-  }
-
 /* Body */
 
 body{

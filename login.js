@@ -388,14 +388,6 @@ const masks = {
 
 }
 
-document.querySelectorAll('input').forEach($input => {
-  const field = $input.dataset.js
-
-  $input.addEventListener('input', e => {
-    e.target.value = masks[field](e.target.value)
-  }, false)
-})
-
 /* Impedir numeros nos input*/
 
 var inputNome = document.querySelector("#nome");
@@ -459,19 +451,6 @@ $("#btncep").on("click", function () {
 })
 
 /* DarkMode*/
-
-const chk = document.getElementById('chk')
-
-chk.addEventListener('change', () => {
-  document.body.classList.toggle('dark')
-
-})
-
-document.getElementById('chk')
-addEventListener('click', function () {
-  document.querySelector('body')
-  setAttribute("class", "dark")
-})
 
 /* Validação CPF Digito Verificador*/
 
